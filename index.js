@@ -34,7 +34,9 @@ client.on("ready", () => {
           client.queue.get(newone.guild.id).dispatcher.destroy();
         }
     client.queue.get(newone.guild.id).dispatcher = null;
+    if(client.queue.get(newone.guild.id).connection !== null){
     client.queue.get(newone.guild.id).connection.disconnect();
+    }
     client.queue.get(newone.guild.id).connection = null;
     client.queue.get(newone.guild.id).playing_time = Date.now();
     client.queue.get(newone.guild.id).videos = [];
