@@ -13,7 +13,6 @@
     "@discordjs/opus": "^0.5.3",
     "discord-with-slash": "^1.0.542",
     "discord.js": "^12.5.3",
-    "dotenv": "^10.0.0",
     "ffmpeg-static": "^4.3.0",
     "ytdl-core": "^4.8.2",
     "ytsr": "^3.5.0"
