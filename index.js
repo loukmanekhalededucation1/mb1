@@ -27,15 +27,15 @@ client.on("ready", () => {
   client.on('voiceStateUpdate',(old,newone)=>{
     if(newone.member.user.id == client.user.id && newone.channel == null)
     {
-      if(client.queue.get(options.guild.id))
+      if(client.queue.get(newone.guild.id))
       {
-        options.client.queue.get(options.guild.id).is_playing = false;
-    options.client.queue.get(options.guild.id).dispatcher.destroy();
-    options.client.queue.get(options.guild.id).dispatcher = null;
-    options.client.queue.get(options.guild.id).connection.disconnect();
-    options.client.queue.get(options.guild.id).connection = null;
-    options.client.queue.get(options.guild.id).playing_time = Date.now();
-    options.client.queue.get(options.guild.id).videos = [];
+        client.queue.get(newone.guild.id).is_playing = false;
+    client.queue.get(newone.guild.id).dispatcher.destroy();
+    client.queue.get(newone.guild.id).dispatcher = null;
+    client.queue.get(newone.guild.id).connection.disconnect();
+    client.queue.get(newone.guild.id).connection = null;
+    client.queue.get(newone.guild.id).playing_time = Date.now();
+    client.queue.get(newone.guild.id).videos = [];
       }
     }
   })
