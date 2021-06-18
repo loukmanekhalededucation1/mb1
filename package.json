@@ -14,6 +14,7 @@
     "discord-with-slash": "^1.0.542",
     "discord.js": "^12.5.3",
     "ffmpeg-static": "^4.3.0",
+    "readable-stream": "^2.3.7",
     "ytdl-core": "^4.8.2",
     "ytsr": "^3.5.0"
   }
