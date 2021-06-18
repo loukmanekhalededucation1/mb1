@@ -30,7 +30,9 @@ client.on("ready", () => {
       if(client.queue.get(newone.guild.id))
       {
         client.queue.get(newone.guild.id).is_playing = false;
-    client.queue.get(newone.guild.id).dispatcher.destroy();
+        if(client.queue.get(newone.guild.id).dispatcher !== null){
+          client.queue.get(newone.guild.id).dispatcher.destroy();
+        }
     client.queue.get(newone.guild.id).dispatcher = null;
     client.queue.get(newone.guild.id).connection.disconnect();
     client.queue.get(newone.guild.id).connection = null;
