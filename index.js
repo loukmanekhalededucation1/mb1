@@ -1,7 +1,6 @@
 const slashCommands = require('discord-with-slash');
 const discord = require('discord.js');
 const path = require('path');
-const fetch = require('node-fetch');
 const client = new discord.Client();
 client.queue = new discord.Collection();
 new slashCommands(client,path.join(__dirname,'commands'), '763170517087027200');
@@ -10,15 +9,6 @@ client.on('ready', ( ) => {
   console.log(`${client.user.tag} is ready`);
 })
 
-fetch(`https://discord.com/api/v9/guilds/763170517087027200/members?limit=1000`,
-{
-  method:'get',
-  headers:{
-    authorization:`Bot ${process.env.token_abdou}`
-  }
-}).then(res=>res.json()).then(res=>{
-  console.log(res);
-})
 
 client.on("ready", () => {
   let index = 0;
