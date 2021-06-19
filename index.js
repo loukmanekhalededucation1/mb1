@@ -18,7 +18,7 @@ setInterval(()=>{
         
         members+=guild.memberCount;
     })
-    client.user.setActivity(`${members} members | ${client.guilds.cache.size}`)
+    client.user.setActivity(`${members} members | ${client.guilds.cache.size} guilds`)
 },15000)
     
       
