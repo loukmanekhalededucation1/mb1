@@ -3,6 +3,7 @@ module.exports = {
   description:'Make the bot joins your voice channel',
   execute(options)
   {
+    if(!options.member.voice.channel) return options.send("You are not in a voice channel.");
     let t = false;
     options.guild.members.fetch(options.client.user.id).catch(()=>{return t = true}).then((cm)=>{
       if(t == true) return;
