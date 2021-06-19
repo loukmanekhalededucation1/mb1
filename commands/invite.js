@@ -7,6 +7,7 @@ module.exports = {
      {
        data:{
         type:4,
+       data:{
        flags:64,
        content:'Here is the invite link of the bot and the support server',
       components:[{
@@ -24,6 +25,7 @@ module.exports = {
           label:'Support Server'
         }]
       }]
+    }
     }
   })
 }
