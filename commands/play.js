@@ -70,7 +70,8 @@ async function play(options, connection, song) {
       options.client.queue.get(options.guild.id).is_playing = false;
     }
   });
-  dispatcher.on('error', () => {
+  dispatcher.on('error', (err) => {
+    console.log(err);
     options.channel.send('An error has been occured while playing the given song 🙄.').catch(() => { return });
     options.client.queue.get(options.guild.id).is_playing = false;
     options.client.queue.get(options.guild.id).dispatcher.destroy();
