@@ -11,9 +11,16 @@ client.on('ready', ( ) => {
 
 
 client.on("ready", () => {
+let members = 0;
+
+setInterval(()=>{
+   client.guilds.cache.forEach((guild)=>{
+        members+=guild.memberCount;
+    })
+},15000)
   let index = 0;
     const activities_list = [
-        `${client.users.cache.size} users | ${client.guilds.cache.size} guilds`,
+        `${members} members | ${client.guilds.cache.size} guilds`,
         `Thunders Esport`,
         `/play`,
     ];
