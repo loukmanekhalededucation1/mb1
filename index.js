@@ -3,7 +3,7 @@ const discord = require('discord.js');
 const path = require('path');
 const client = new discord.Client();
 client.queue = new discord.Collection();
-new slashCommands(client,path.join(__dirname,'commands'), '763170517087027200');
+new slashCommands(client,path.join(__dirname,'commands'));
 
 client.on('ready', ( ) => {
   console.log(`${client.user.tag} is ready`);
