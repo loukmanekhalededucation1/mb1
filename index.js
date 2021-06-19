@@ -11,24 +11,19 @@ client.on('ready', ( ) => {
 
 
 client.on("ready", () => {
-let members = 0;
 
 setInterval(()=>{
+   let members = 0;
    client.guilds.cache.forEach((guild)=>{
+        
         members+=guild.memberCount;
     })
+    client.user.setActivity(`${members} members | ${client.guilds.cache.size}`)
 },15000)
-  let index = 0;
-    const activities_list = [
-        `${members} members | ${client.guilds.cache.size} guilds`,
-        `Thunders Esport`,
-        `/play`,
-    ];
-    setInterval(() => {
-      if(index == 3) index = 0;
-        client.user.setActivity(activities_list[index]);
-        index++;
-    }, 5000);
+    
+      
+       
+   
   });
   
   client.on('voiceStateUpdate',(old,newone)=>{
