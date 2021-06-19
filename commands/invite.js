@@ -3,8 +3,12 @@ module.exports = {
   description:'Bot invite and support server link',
   execute(options)
   {
-    options.send('Here is the invite link of the bot and the support server', {
-      ephemeral:true,
+    options.client.api.interactions(options.interaction.id,options.interaction.token).callback.post(
+     {
+       data:{
+        type:4,
+       flags:64,
+       content:'Here is the invite link of the bot and the support server',
       components:[{
         type:1,
         components:[{
@@ -20,6 +24,7 @@ module.exports = {
           label:'Support Server'
         }]
       }]
-    })
-  }
+    }
+  })
+}
 }
